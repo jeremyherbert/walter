@@ -423,6 +423,22 @@ $(document).ready(function() {
             e.values = decade_generate_values(e.min, e.max, E_table[e.var_type]);
         });
         
+        var i;
+        loc = [];
+        for (i=0; i<parameters.args.length; i++) loc.push(0);
+        try {
+            eval_at_loc(parameters.equation, loc, parameters.args);
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                $('textarea').css("background-color", "#FFA6A3");
+                $('#error').show();
+                return;
+            }
+        }
+        
+        $('textarea').css("background-color", '#FFFFFF');
+        $('#error').hide();
+        
         $("#output").empty();
         $('#output').append($("<p>stand back and let me do my thing...</p>"));
         
