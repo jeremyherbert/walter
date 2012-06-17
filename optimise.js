@@ -312,9 +312,13 @@ function steepest_descent(param) {
                 new_loc = elementwise_add(loc, e);
                 if (inside_bounds(new_loc, args)) {
                     result = eval_at_loc(equation, new_loc, args);
-
+                    
                     val = param.desired - result;
                     val *= val;
+                    
+                    if (Math.round(result) == 9947) {
+                        console.log('here');
+                    }
 
                     if (val < local_min) {
                         local_min = val;
@@ -323,12 +327,12 @@ function steepest_descent(param) {
                     }
                 }
             });
-
+            
             if (local_min < best) {
                 best = local_min;
                 best_result = local_min_result;
-                best_args = new_loc.slice(0);
-                loc = new_loc;
+                best_args = local_min_loc.slice(0);
+                loc = local_min_loc.slice(0);
             } else {
                 break;
             }
