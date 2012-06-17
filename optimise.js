@@ -315,10 +315,6 @@ function steepest_descent(param) {
                     
                     val = param.desired - result;
                     val *= val;
-                    
-                    if (Math.round(result) == 9947) {
-                        console.log('here');
-                    }
 
                     if (val < local_min) {
                         local_min = val;
