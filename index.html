@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jeremy's javascript RLC fmin</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="optimise.js"></script> <!-- <= I hear some cool dude wrote this -->
+    <link rel="stylesheet" href="jeremy-is-stylish.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-5104569-8']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <h2>so i hear you wanna do some discrete multivariate optimisation? you feelin' lucky?</h2>
+      <p>well, let me ask you some questions then buddy:</p>
+      
+        <div id="arguments">
+          <div id="eq">
+            <label for="equation">what equation have you got for me (use <a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">these</a> funcs):</label><br />
+            <textarea name="equation" id="equation">1/(2 * PI * R * C)</textarea><br />
+          
+            <p><label for="desired">what value do you want me to look for: </label><input type="number" name="desired" id="desired" value=10E3></input><br /><p>
+          </div>
+          
+          <div id="arg">
+            <p><label for="num_args">how many arguments you got: </label>
+              <input type="number" name="num_args" id="num_args" value=2 min=1 max=99></input></p>
+        
+            <table id="arg_table">
+              <tr class="header">
+                <td>variable</td>
+                <td>series(<a href="http://www.logwell.com/tech/components/resistor_values.html" target="_blank">?</a>)</td>
+                <td>min</td>
+                <td>max</td>
+              </tr>
+            </table>
+          </div>
+          
+          <div id="algo">
+            <p>which algorithm should i work on this equation with:</p>
+            <p>
+              <input type=radio name="algo_radio" id="algo_steepest" value="steepest" checked /><label for="algo_steepest"> monte carlo steepest descent (fast, recommended)</label><br />
+              <input type=radio name="algo_radio" id="algo_force" value="force"><label for="algo_force"> brute force (slow, guaranteed to converge to the global optimum)</label>
+            </p>
+          </div>
+          
+          <div id="go">
+            <p><input type="button" id="run" value="ok, let's do this"></input></p>
+          </div>
+        </div>
+        
+        <div class="separator">&</div>
+        
+        <div id="output">go on then, i'm waiting for you.</div>
+        
+        <div class="separator">&</div>
+        
+        <div id="footer"><a href="http://jeremyherbert.net" >jeremyherbert</a>? i hear that dude is pretty cool...</div>
+    </div>
+  </body>
+</html>

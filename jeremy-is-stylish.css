@@ -1,0 +1,75 @@
+body {
+    padding: 20px;
+}
+
+input {
+    background: white;
+}
+
+textarea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#output {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#footer {
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#eq, #arg, #algo, #go {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #ccc;
+}
+
+#content {
+    font-family: Georgia;
+    font-size: 1.1em;
+    margin: 0 auto;
+    padding: 20px;
+    width: 70%;
+}
+
+#pagetitle {
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+.separator {
+    font-size: 2em;
+    text-align: center;
+}
+
+h2, h3 {
+    font-weight: normal;
+}
+
+h2 {
+    padding-top: 30px;
+}
+
+small {
+    font-size: 0.5em;
+}
+
+a, a:visited {
+    color: #275673;
+}
+
+a:hover {
+    background: #275673;
+    color: #fff;
+    text-decoration: none;
+}
+
+.centerblock {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
